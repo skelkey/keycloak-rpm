@@ -1,14 +1,15 @@
 %define debug_package %{nil}
+%define __jar_repack %{nil}
 
-Name: keycloak
-Version: 10.0.2
-Release: 1%{?dist}
-Summary: SSO, Identity and Access Management software
+Name:        keycloak
+Version:     10.0.2
+Release:     1%{?dist}
+Summary:     SSO, Identity and Access Management software
 
-License: ASL 2.0
-URL: https://www.keycloak.org/
-Source0: https://downloads.jboss.org/%{name}/{%version}/%{name}-%{version}.tar.gz
-Source1: %{name}.service
+License:     ASL 2.0
+URL:         https://www.keycloak.org/
+Source0:     https://downloads.jboss.org/%{name}/{%version}/%{name}-%{version}.tar.gz
+Source1:     %{name}.service
 
 %description
 Keycloak is an open source software product to allow single sign-on with
