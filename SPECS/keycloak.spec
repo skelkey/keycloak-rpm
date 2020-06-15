@@ -25,7 +25,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d -m 0755 %{buildroot}/opt
 install -d -m 0755 %{buildroot}/opt/%{name}
 tar --strip-components=1 -C %{buildroot}/opt/%{name} -xvf %{SOURCE0}
-install -m O755 %{name} %{buildroot}/opt
 install -d -m 0755 %{buildroot}%{_unitdir}
 install -m O644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 
