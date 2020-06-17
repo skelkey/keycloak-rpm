@@ -23,6 +23,7 @@ and services
 
 %install
 rm -rf $RPM_BUILD_ROOT
+chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfly/openssl/main/lib/solaris-x86_64/libwfssl.so
 install -d -m 0755 %{buildroot}/opt
 install -d -m 0755 %{buildroot}/opt/%{name}
 tar --strip-components=1 -C %{buildroot}/opt/%{name} -xvf %{SOURCE0}
