@@ -10,6 +10,9 @@ License:     ASL 2.0
 URL:         https://www.keycloak.org/
 Source0:     https://downloads.jboss.org/%{name}/{%version}/%{name}-%{version}.tar.gz
 Source1:     %{name}.service
+Source2:     %{name}.conf
+Source3:     launch.sh
+
 
 %description
 Keycloak is an open source software product to allow single sign-on with
@@ -23,12 +26,14 @@ and services
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d -m 0755 %{buildroot}/opt
 install -d -m 0755 %{buildroot}/opt/%{name}
 tar --strip-components=1 -C %{buildroot}/opt/%{name} -xvf %{SOURCE0}
-chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfly/openssl/main/lib/solaris-x86_64/libwfssl.so
 install -d -m 0755 %{buildroot}%{_unitdir}
 install -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
+install -d -m 0755 %{buildroot}/etc/%{name}
+install -m 0644 %{SOURCE2} %{buildroot}/etc/%{name}
+install -m 0644 %{SOURCE3} %{buildroot}/opt/%{name}/bin/
+chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfly/openssl/main/lib/solaris-x86_64/libwfssl.so
 
 
 %pre
@@ -39,7 +44,13 @@ install -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 %defattr(-,%{name},%{name},-)
 %attr(-,{%name},%{name}) /opt/%{name}
 %attr(-,root,root) %{_unitdir}/%{name}.service
+%attr(-,root,root) /etc/%{name}.conf
+%attr(-,root,root) /opt/%{name}/bin/launch.sh
+
 
 %changelog
+* Wed Jun 17 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
+  - Adding service configuration file
+
 * Mon Jun 15 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
   - Initial specfile
