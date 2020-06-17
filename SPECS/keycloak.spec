@@ -44,7 +44,7 @@ chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfl
 %defattr(-,%{name},%{name},-)
 %attr(-,{%name},%{name}) /opt/%{name}
 %attr(-,root,root) %{_unitdir}/%{name}.service
-%attr(-,root,root) /etc/%{name}.conf
+%attr(-,root,root) /etc/%{name}/wildfly.conf
 %attr(-,root,root) /opt/%{name}/bin/launch.sh
 
 
