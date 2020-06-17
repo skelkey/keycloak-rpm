@@ -1,5 +1,6 @@
 %define debug_package %{nil}
 %define __jar_repack %{nil}
+%define __brp_ldconfig %{nil}
 
 Name:        keycloak
 Version:     10.0.2
