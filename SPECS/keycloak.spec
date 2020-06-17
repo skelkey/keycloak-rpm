@@ -10,7 +10,7 @@ License:     ASL 2.0
 URL:         https://www.keycloak.org/
 Source0:     https://downloads.jboss.org/%{name}/{%version}/%{name}-%{version}.tar.gz
 Source1:     %{name}.service
-Source2:     %{name}.conf
+Source2:     wildfly.conf
 Source3:     launch.sh
 
 
