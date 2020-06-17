@@ -33,7 +33,7 @@ install -d -m 0755 %{buildroot}%{_unitdir}
 install -m 0644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
 install -d -m 0755 %{buildroot}/etc/%{name}
 install -m 0644 %{SOURCE2} %{buildroot}/etc/%{name}
-install -m 0644 %{SOURCE3} %{buildroot}/opt/%{name}/bin/
+install -m 0744 %{SOURCE3} %{buildroot}/opt/%{name}/bin/
 install -d -m 0755 %{buildroot}%{_localstatedir}/run/%{name}
 chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfly/openssl/main/lib/solaris-x86_64/libwfssl.so
 
