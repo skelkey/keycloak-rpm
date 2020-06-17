@@ -47,8 +47,8 @@ chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfl
 %attr(-,{%name},%{name}) /opt/%{name}
 %attr(-,root,root) %{_unitdir}/%{name}.service
 %attr(-,root,root) /etc/%{name}/wildfly.conf
-%attr(-,root,root) /opt/%{name}/bin/launch.sh
-%attr(-,root,root) %{_localstatedir}/run/%{name}
+%attr(-,%{name},%{name}) /opt/%{name}/bin/launch.sh
+%attr(-,%{name},%{name}) %{_localstatedir}/run/%{name}
 
 %changelog
 * Wed Jun 17 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
