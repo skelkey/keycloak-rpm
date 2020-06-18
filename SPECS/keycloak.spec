@@ -52,6 +52,9 @@ chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfl
 %attr(-,%{name},%{name}) %{_localstatedir}/run/%{name}
 
 %changelog
+* Thu Jun 18 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
+  - Adding requirements for java-openjdk >= 8
+
 * Wed Jun 17 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
   - Adding service configuration file
 
