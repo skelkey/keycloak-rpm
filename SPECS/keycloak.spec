@@ -14,7 +14,7 @@ Source1:     %{name}.service
 Source2:     wildfly.conf
 Source3:     launch.sh
 
-Requires:    java-openjdk >= 1:8
+Requires:    java-openjdk-headless >= 1:8
 
 %description
 Keycloak is an open source software product to allow single sign-on with
@@ -54,6 +54,7 @@ chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfl
 %changelog
 * Mon Jun 22 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
   - Factoring file attributes
+  - Changing java artifact name
 
 * Thu Jun 18 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
   - Adding requirements for java-openjdk >= 8
