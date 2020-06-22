@@ -45,13 +45,16 @@ chrpath --delete %{buildroot}/opt/keycloak/modules/system/layers/base/org/wildfl
 
 %files
 %defattr(-,%{name},%{name},-)
-%attr(-,{%name},%{name}) /opt/%{name}
 %attr(-,root,root) %{_unitdir}/%{name}.service
 %attr(-,root,root) /etc/%{name}/wildfly.conf
-%attr(-,%{name},%{name}) /opt/%{name}/bin/launch.sh
-%attr(-,%{name},%{name}) %{_localstatedir}/run/%{name}
+/opt/%{name}
+/opt/%{name}/bin/launch.sh
+%{_localstatedir}/run/%{name}
 
 %changelog
+* Mon Jun 22 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
+  - Factoring file attributes
+
 * Thu Jun 18 2020 Edouard Camoin <edouard.camoin@gmail.com> 10.0.2-1
   - Adding requirements for java-openjdk >= 8
 
