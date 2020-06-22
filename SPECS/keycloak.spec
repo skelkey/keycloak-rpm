@@ -14,7 +14,7 @@ Source1:     %{name}.service
 Source2:     wildfly.conf
 Source3:     launch.sh
 
-Requires:    java-latest-openjdk >= 1:8
+Provides:    java-headless >= 1:1.8
 
 %description
 Keycloak is an open source software product to allow single sign-on with
